@@ -10,6 +10,11 @@ body {
   box-sizing: border-box;
   padding: 15px; }
 
+dl dt {
+  float: left; }
+dl dd {
+  float: left; }
+
 #contacts .contact-item {
   width: 33.33%;
   position: relative;
@@ -28,3 +33,8 @@ body {
     width: 60%;
     position: relative;
     float: left; }
+    #contacts .contact-item .info .type {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-style: italic; }

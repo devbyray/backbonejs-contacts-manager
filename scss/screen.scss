@@ -5,6 +5,15 @@ body {
 	padding: 15px;
 }
 
+dl {
+	dt {
+		float: left;
+	}
+	dd {
+		float: left;
+	}
+}
+
 #contacts {
 	@extend .after;
 	.contact-item {
@@ -26,6 +35,11 @@ body {
 			width: 60%;
 			position: relative;
 			float: left;
+			.type {
+				position: absolute;
+				top: 0; right: 0;
+				font-style: italic;
+			}
 		}
 	}
 }

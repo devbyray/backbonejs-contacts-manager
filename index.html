@@ -8,19 +8,22 @@
         <link rel="stylesheet" href="css/screen.css" />
     </head>
     <body>
-        <div id="contacts"></div>
+        <div id="contacts">
+            <header>
+                <div id="filter"><label>Show me:</label></div>
+            </header>            
+        </div>
 
         <script id="contactTemplate" type="text/template">
             <div class="photo">
                 <img src="<%= photo %>" alt="<%= name %>" />
             </div>
             <div class="info">
-                <h1><%= name %><span><%= type %></span></h1>
+                <span class="type"><%= type %></span>
+                <h1><%= name %></h1>
                 <div><%= address %></div>
-                <dl>
-                    <dt>Tel:</dt><dd><%= tel %></dd>
-                    <dt>Email:</dt><dd><a href="mailto:<%= email %>"><%= email %></a></dd>
-                </dl>
+                <li><strong>Tel:</strong><%= tel %></li>
+                <li><strong>Email:</strong><a href="mailto:<%= email %>"><%= email %></a></li>
             </div>
         </script>
 
