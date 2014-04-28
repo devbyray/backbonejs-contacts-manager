@@ -11,6 +11,7 @@
         <div id="contacts">
             <header>
                 <div id="filter"><label>Show me:</label></div>
+                <a id="showForm" href="#">Add new contact</a>
             </header>            
         </div>
 
@@ -24,6 +25,9 @@
                 <div><%= address %></div>
                 <li><strong>Tel:</strong><%= tel %></li>
                 <li><strong>Email:</strong><a href="mailto:<%= email %>"><%= email %></a></li>
+            </div>
+            <div class="buttons">
+                <button class="delete">Delete</button>
             </div>
         </script>
 
