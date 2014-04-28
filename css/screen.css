@@ -1,0 +1,30 @@
+.after:after, #contacts:after {
+  clear: both;
+  display: block;
+  font: 1px/0px serif;
+  content: ".";
+  height: 0;
+  visibility: hidden; }
+
+body {
+  box-sizing: border-box;
+  padding: 15px; }
+
+#contacts .contact-item {
+  width: 33.33%;
+  position: relative;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #ccc;
+  border: 5px solid #fff; }
+  #contacts .contact-item .photo {
+    width: 40%;
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 20px; }
+  #contacts .contact-item .info {
+    width: 60%;
+    position: relative;
+    float: left; }
