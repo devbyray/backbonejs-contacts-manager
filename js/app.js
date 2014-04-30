@@ -34,6 +34,7 @@
         tagName: "article",
         className: "contact-item",
         template: _.template($("#contactTemplate").html()),
+        editTemplate: _.template($("#contactEditTemplate").html()),
 
         render: function () {
             this.$el.html(this.template(this.model.toJSON()));
@@ -58,7 +59,22 @@
             if (_.indexOf(directory.getTypes(), removedType) === -1) {
                 directory.$el.find("#filter select").children("[value='" + removedType + "']").remove();
             }
-        }
+        },
+
+        editContact: function () {
+            this.$el.html(this.editTemplate(this.model.toJSON()));
+         
+            var newOpt = $("<option/>", {
+                html: "<em>Add new...</em>",
+                value: "addType"   
+            }),
+         
+            this.select = directory.createSelect().addClass("type")
+                .val(this.$el.find("#type").val()).append(newOpt)
+                .insertAfter(this.$el.find(".name"));
+         
+            this.$el.find("input[type='hidden']").remove();
+        },        
     });
 
     //define master view
@@ -118,7 +134,11 @@
         events: {
             "change #filter select": "setFilter",
             "click #add": "addContact",
-            "click #showForm": "showForm"
+            "click #showForm": "showForm",
+            "click button.edit": "editContact",
+            "change select.type": "addType",
+            "click button.save": "saveEdits",
+            "click button.cancel": "cancelEdit"
         },
 
         //Set filter property and fire change event

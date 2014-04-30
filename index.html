@@ -12,6 +12,16 @@
             <header>
                 <div id="filter"><label>Show me:</label></div>
                 <a id="showForm" href="#">Add new contact</a>
+                <hr>
+                <form id="addContact" action="#">
+                    <label for="photo">Photo:<input id="photo" type="file" /></label>
+                    <label for="name">Name:<input id="name" /></label>
+                    <label for="type">Type:<input id="type" /></label>
+                    <label for="address">Address:<input id="address" /></label>
+                    <label for="tel">Tel:<input id="tel" /></label>
+                    <label for="email">Email:<input id="email" /></label>
+                    <button id="add">Add</button>
+                </form>
             </header>            
         </div>
 
@@ -27,8 +37,20 @@
                 <li><strong>Email:</strong><a href="mailto:<%= email %>"><%= email %></a></li>
             </div>
             <div class="buttons">
-                <button class="delete">Delete</button>
+                <button class="delete">Delete</button><button class="edit">Edit</button>
             </div>
+        </script>
+        <script id="contactEditTemplate" type="text/template">
+            <form action="#">
+                <input type="file" value="<%= photo %>" />
+                <input class="name" value="<%= name %>" />
+                <input id="type" type="hidden" value="<%= type %>" />
+                <input class="address" value="<%= address %>" />
+                <input class="tel" value="<%= tel %>" />
+                <input class="email" value="<%= email %>" />
+                <button class="save">Save</button>
+                <button class="cancel">Cancel</button>
+            </form>
         </script>
 
 

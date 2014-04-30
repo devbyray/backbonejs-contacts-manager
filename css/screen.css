@@ -40,3 +40,15 @@ dl dd {
   #contacts .contact-item .buttons {
     margin-top: 16px;
     widows: 100%; }
+
+#addContact {
+  color: #fff;
+  background-color: #333;
+  box-sizing: border-box;
+  padding: 20px; }
+  #addContact input[type="text"] {
+    background-color: #111; }
+  #addContact input, #addContact button {
+    color: #333; }
+  #addContact label {
+    margin-right: 10px; }
